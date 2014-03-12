@@ -1,11 +1,11 @@
 {
-  "name": "shiki/oauth",
+  "name": "raffiudelle/f1api",
   "type": "library",
-  "description": "An OAuth 1.0 implementation for PHP based on the PHP library in http://code.google.com/p/oauth/",
-  "keywords": ["oauth"],
+  "description": "A fork of https://github.com/shiki/php-oauth with FellowshipOne api",
+  "keywords": ["oauth", "f1"],
   "homepage": "https://github.com/shiki/php-oauth",
   "license": "MIT",
   "autoload": {
-    "files": ["OAuth.php"]
+    "files": ["OAuth.php", "FellowshipOne.php"]
   }
 }
