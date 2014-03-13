@@ -16,9 +16,9 @@ use OAuth\OAuthSignatureMethod_HMAC_SHA1;
  */
 class FellowshipOne{
 
-	private $settings;
-	private $consumer;
-	private $token;
+	protected $settings;
+	protected $consumer;
+	protected $token;
 
 
 	public $paths = array(
@@ -314,7 +314,7 @@ class FellowshipOne{
 	 * @param string $response
 	 * @return stdClass $vars
 	 */
-	private function parseResponse($response){
+	protected function parseResponse($response){
 			$parts = explode("\r\n\r\n", $response);
 			$vars = null;
 			if(is_array($parts) && sizeof($parts)>1){
@@ -330,7 +330,7 @@ class FellowshipOne{
 	 * @param string $response
 	 * @return stdClass $vars
 	 */
-	private function parseResponseJson($response){
+	protected function parseResponseJson($response){
 			$parts = explode("\r\n\r\n", $response);
 			$this->debug($response);
 			$this->debug($parts);
@@ -351,7 +351,7 @@ class FellowshipOne{
 	 * @param array $postData
 	 * @return string $response
 	 */
-	private function sendRequest($http_method, $url, $auth_header=null, $postData=null) {  
+	protected function sendRequest($http_method, $url, $auth_header=null, $postData=null) {  
 	  $this->debug($url);
 	  $this->debug($auth_header);
 	  $this->debug($postData);
@@ -401,7 +401,7 @@ class FellowshipOne{
 	 * @param array $array Associative array of query parameters 
 	 * @return string Urlencoded string of query parameters 
 	 */  
-	private function implodeAssoc($inner_glue, $outer_glue, $array) {  
+	protected function implodeAssoc($inner_glue, $outer_glue, $array) {  
 	  $output = array();  
 	  foreach($array as $key => $item) {  
 		$output[] = $key . $inner_glue . urlencode($item);  
