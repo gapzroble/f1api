@@ -108,7 +108,6 @@ class FellowshipOne{
 	 */
 	public function getAddressModel($personId){
 			$url = str_replace('{personID}',$personId, $this->settings->baseUrl . $this->paths['people']['newAddress'] . ".json");
-			var_dump($url);
 			return $this->fetchGetJson($url);
 	}
 
